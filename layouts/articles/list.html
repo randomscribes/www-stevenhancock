@@ -1,0 +1,12 @@
+{{ partial "header" . }}
+
+<main>
+
+    <h2>{{ .Title }}</h2>
+    Here are some things that I've written
+    {{ range (.Paginator 10).Pages }} {{ .Render "summary" }} {{ end }}
+
+</main>
+
+{{ partial "paginator" . }}
+{{ partial "footer" . }}
