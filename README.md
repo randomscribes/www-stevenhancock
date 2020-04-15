@@ -15,3 +15,15 @@ Start Hugo Server
 
 Create a new article
 `hugo new articles/article-name.md`
+
+Create public files for adding to GCP Cloud Storage
+`hugo`
+
+## GCP Static Website Using Cloud Storage
+
+See: https://cloud.google.com/storage/docs/hosting-static-website & https://cloud.google.com/storage/docs/best-practices & https://cloud.google.com/load-balancing/docs/https/adding-backend-buckets-to-load-balancers
+
+
+`gsutil -m cp -r public/* gs://[project-id]-test/`
+
+`gsutil web set -m index.html -e 404.html gs://www.example.com`
