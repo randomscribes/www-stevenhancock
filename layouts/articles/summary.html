@@ -1,0 +1,10 @@
+<article class="article-summary">
+    <header>
+        <h2><a href='{{ .Params.external_url }}'> {{ .Title }}</a> </h2>
+        <div class="post-meta">{{ .Date.Format "Mon, Jan 2, 2006" }} </div>
+    </header>
+    {{ .Summary }}
+    <footer>
+        <a href='{{ .Params.external_url }}'><nobr>Read more →</nobr></a>
+    </footer>
+</article>
