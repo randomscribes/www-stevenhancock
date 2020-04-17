@@ -1,5 +1,13 @@
 # The automated build will be trigger based on a GitHub merge to Master
 steps:
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: 'bash'
+  args:
+- '-c'
+- |
+  git config -f .gitmodules submodule.minimal.url https://source.developers.google.com/p/www-stevenhancock/r/github_minimal
+  git submodule init
+  git submodule update
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: 'bash'
   args: [ '-c', 'gcloud secrets versions access latest --secret=auto-deploy-service-account > .${_PROJECT_DIRECTORY}/service-account.json' ]
