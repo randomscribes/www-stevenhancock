@@ -27,3 +27,10 @@ See: https://cloud.google.com/storage/docs/hosting-static-website & https://clou
 `gsutil -m cp -r public/* gs://[project-id]-test/`
 
 `gsutil web set -m index.html -e 404.html gs://www.example.com`
+
+
+## Cloud Build
+`cloudbuild.yaml`
+
+### Secrets
+To be able to interact with cloud storage from the container that cloud build creates you'll need to credentials. Use [secrets](https://cloud.google.com/cloud-build/docs/securing-builds/use-encrypted-secrets-credentials) to get these credentials.
