@@ -5,9 +5,11 @@ steps:
       args: [ '-c', 'gcloud secrets versions access latest --secret=auto-deploy-service-account > .${_PROJECT_DIRECTORY}/service-account.json' ]
     - name: 'gcr.io/cloud-builders/docker'
       args: ['build', '-t', 'gcr.io/$PROJECT_ID/hugo-deploy', '.${_PROJECT_DIRECTORY}']
-    - name: 'gcr.io/cloud-builders/docker'
-      args: ['run', '-t', 'gcr.io/$PROJECT_ID/vbqcli', 'python', '/home/vbqcli.py', '/home/queries/']
-    images: ['gcr.io/$PROJECT_ID/vbqcli']
+    # - name: 'gcr.io/cloud-builders/docker'
+    #   args: ['run', '-t', 'gcr.io/$PROJECT_ID/hugo-deploy', 'hugo']
+    # - name: 'gcr.io/cloud-builders/docker'
+    #   args: ['run', '-t', 'gcr.io/$PROJECT_ID/hugo-deploy', 'gcloud cp']
+    images: ['gcr.io/$PROJECT_ID/hugo-deploy']
     substitutions:
         _PROJECT_DIRECTORY: /
     options:
