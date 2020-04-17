@@ -34,3 +34,6 @@ See: https://cloud.google.com/storage/docs/hosting-static-website & https://clou
 
 ### Secrets
 To be able to interact with cloud storage from the container that cloud build creates you'll need to credentials. Use [secrets](https://cloud.google.com/cloud-build/docs/securing-builds/use-encrypted-secrets-credentials) to get these credentials.
+
+### GitHub Triggers
+Using [GitHub Triggers](https://cloud.google.com/cloud-build/docs/automating-builds/create-github-app-triggers) we can automate cloud build on git commits.
