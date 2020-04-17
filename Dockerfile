@@ -3,7 +3,8 @@ FROM google/cloud-sdk:latest
 ENV HOME /home/
 WORKDIR /home/
 
-RUN apt-get install hugo
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get -y install hugo
 
 # Use this instead of mounting a volume
 COPY project /home/
