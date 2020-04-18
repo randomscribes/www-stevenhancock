@@ -1,0 +1,15 @@
+# The automated build will be trigger based on a GitHub merge to Master
+steps:
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args: [ '-c', 'gcloud secrets versions access latest --secret=auto-deploy-service-account > .${_PROJECT_DIRECTORY}/service-account.json' ]
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args: [ '-c', 'ls -a' ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/hugo-deploy', '--build-arg', 'BRANCH="$BRANCH_NAME"', '.${_PROJECT_DIRECTORY}']
+images: ['gcr.io/$PROJECT_ID/hugo-deploy']
+substitutions:
+  _PROJECT_DIRECTORY: /
+options:
+  substitution_option: 'ALLOW_LOOSE'

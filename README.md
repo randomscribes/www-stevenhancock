@@ -24,6 +24,16 @@ Create public files for adding to GCP Cloud Storage
 See: https://cloud.google.com/storage/docs/hosting-static-website & https://cloud.google.com/storage/docs/best-practices & https://cloud.google.com/load-balancing/docs/https/adding-backend-buckets-to-load-balancers
 
 
-`gsutil -m cp -r public/* gs://[project-id]-test/`
+`gsutil -m cp -r public/* gs://test.stevenhancock.ca/`
 
 `gsutil web set -m index.html -e 404.html gs://www.example.com`
+
+
+## Cloud Build
+`cloudbuild.yaml`
+
+### Secrets
+To be able to interact with cloud storage from the container that cloud build creates you'll need to credentials. Use [secrets](https://cloud.google.com/cloud-build/docs/securing-builds/use-encrypted-secrets-credentials) to get these credentials.
+
+### GitHub Triggers
+Using [GitHub Triggers](https://cloud.google.com/cloud-build/docs/automating-builds/create-github-app-triggers) we can automate cloud build on git commits.
