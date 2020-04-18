@@ -6,6 +6,7 @@ steps:
   args:
     - '-c'
     - |
+      git init
       git config -f .gitmodules submodule.minimal.url https://source.developers.google.com/p/www-stevenhancock/r/github_shancock-va_minimal
       git submodule init
       git submodule update
