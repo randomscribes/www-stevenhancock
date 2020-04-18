@@ -16,6 +16,6 @@ ENV GOOGLE_APPLICATION_CREDENTIALS=/home/service-account.json
 
 RUN hugo
 
-RUN if [ "$BRANCH" = "master" ] ; then gsutil -m cp -r public/* gs://www-stevenhancock-ca/ ; else yarn gsutil -m cp -r public/* gs://test-stevenhancock-ca/ ; fi
+RUN if [ "$BRANCH" = "master" ] ; then gsutil -m cp -r public/* gs://www-stevenhancock-ca/ ; else gsutil -m cp -r public/* gs://test-stevenhancock-ca/ ; fi
 
 
