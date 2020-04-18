@@ -6,7 +6,7 @@ steps:
   args:
     - '-c'
     - |
-      git config -f .gitmodules submodule.minimal.url https://source.developers.google.com/p/www-stevenhancock/r/github_minimal
+      git config -f .gitmodules submodule.minimal.url https://github.com/shancock-va/minimal.git
       git submodule init
       git submodule update
 - name: gcr.io/cloud-builders/gcloud
