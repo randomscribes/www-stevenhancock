@@ -19,6 +19,6 @@ RUN hugo
 RUN gcloud auth activate-service-account auto-deploy@www-stevenhancock.iam.gserviceaccount.com --key-file=$GOOGLE_APPLICATION_CREDENTIALS
 
 RUN echo "Deploying branch: $BRANCH"
-RUN if [ "$BRANCH" = "master" ] ; then gsutil -m cp -r public/* gs://www.stevenhancock.ca/ ; else gsutil -m cp -r public/* gs://test.stevenhancock.ca/ ; fi
+RUN if [ "$BRANCH" = "\"master\"" ] ; then gsutil -m cp -r public/* gs://www.stevenhancock.ca/ ; else gsutil -m cp -r public/* gs://test.stevenhancock.ca/ ; fi
 
 
