@@ -1,4 +1,4 @@
-baseURL = "http://www.stevenhancock.ca/"
+baseURL = "https://www.stevenhancock.ca/"
 languageCode = "en-us"
 title = "Steven Hancock"
 theme = "minimal"

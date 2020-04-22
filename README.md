@@ -37,3 +37,11 @@ To be able to interact with cloud storage from the container that cloud build cr
 
 ### GitHub Triggers
 Using [GitHub Triggers](https://cloud.google.com/cloud-build/docs/automating-builds/create-github-app-triggers) we can automate cloud build on git commits.
+
+## SSL Setup
+
+I'm using a load balancer to enable https for the site.
+
+Some usefull links that helped to get SSL setup for static cloud hosting:
+* https://cloud.google.com/storage/docs/troubleshooting#https
+* https://cloud.google.com/load-balancing/docs/https/adding-backend-buckets-to-load-balancers
