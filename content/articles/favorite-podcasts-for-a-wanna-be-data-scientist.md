@@ -1,6 +1,6 @@
 ---
 title: "Favorite Podcasts for a Wannabe Data Scientist"
-date: 2020-03-31
+date: 2020-07-29
 tags: []
 draft: false
 external_url: "https://towardsdatascience.com/favorite-podcasts-for-a-wanna-be-data-scientist-1d39dd556af6"
