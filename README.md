@@ -8,6 +8,10 @@ See for some options https://gohugo.io/getting-started/quick-start/
 
 Hugo Theme from https://themes.gohugo.io/theme/minimal/
 
+# Adding Content
+1. Create a new article inside `content/articles` by either using the command `hugo new articles/article-name.md` or copying and editing an existing article.
+2. Commit to git branch.
+3. Wait. Cloud build should automatically pick up what was pushed to Master and deploy to cloudstorage. See `cloudbuild.yaml` and `Dockerfile` for the finer details. Worth noting that commits to the Master branch will show up at www.stevenhancock.ca while commits to all other branches will be deployed to test.stevenhancock.ca/
 
 ## Common Commands
 Start Hugo Server
